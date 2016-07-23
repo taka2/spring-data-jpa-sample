@@ -30,6 +30,17 @@ public class Task {
     @LastModifiedDate
     private Date modifiedDate;
 
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdDate=" + createdDate +
+                ", modifiedBy='" + modifiedBy + '\'' +
+                ", modifiedDate=" + modifiedDate +
+                '}';
+    }
+
     public Task() {
     }
 
@@ -73,23 +84,4 @@ public class Task {
         this.modifiedDate = modifiedDate;
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("id = ");
-        sb.append(id);
-        sb.append("\n");
-        sb.append("createdBy = ");
-        sb.append(createdBy);
-        sb.append("\n");
-        sb.append("createdDate = ");
-        sb.append(createdDate);
-        sb.append("\n");
-        sb.append("modifiedBy = ");
-        sb.append(modifiedBy);
-        sb.append("\n");
-        sb.append("modifiedDate = ");
-        sb.append(modifiedDate);
-        sb.append("\n");
-        return sb.toString();
-    }
 }
