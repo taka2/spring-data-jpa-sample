@@ -14,7 +14,10 @@ import java.util.Date;
 public class Task {
 
     @Id
+    @GeneratedValue
     private Long id;
+
+    private String taskName;
 
     @CreatedBy
     private String createdBy;
@@ -30,18 +33,19 @@ public class Task {
     @LastModifiedDate
     private Date modifiedDate;
 
+    public Task() {
+    }
+
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
-                ", createdBy='" + createdBy + '\'' +
-                ", createdDate=" + createdDate +
-                ", modifiedBy='" + modifiedBy + '\'' +
-                ", modifiedDate=" + modifiedDate +
+                "id=" + getId() +
+                ", taskName='" + getTaskName() + '\'' +
+                ", createdBy='" + getCreatedBy() + '\'' +
+                ", createdDate=" + getCreatedDate() +
+                ", modifiedBy='" + getModifiedBy() + '\'' +
+                ", modifiedDate=" + getModifiedDate() +
                 '}';
-    }
-
-    public Task() {
     }
 
     public Long getId() {
@@ -50,6 +54,14 @@ public class Task {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public String getCreatedBy() {
@@ -83,5 +95,4 @@ public class Task {
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-
 }

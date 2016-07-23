@@ -15,9 +15,17 @@ public class StartupRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        // Generate a new record.
         Task task = new Task();
-        task.setId(1L);
+        task.setTaskName("task1");
         Task savedTask = taskRepository.save(task);
         System.out.println(savedTask);
+
+        Thread.sleep(1000);
+
+        // Update the record after 1sec.
+        savedTask.setTaskName("task2");
+        Task savedTask2 = taskRepository.save(savedTask);
+        System.out.println(savedTask2);
     }
 }
